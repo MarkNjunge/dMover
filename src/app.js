@@ -3,7 +3,8 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const winston = require("winston");
 const { prefix } = require("./config");
-const move = require("./move");
+const move = require("./commands/move");
+const info = require("./commands/info");
 
 // Create logs folder
 if (!fs.existsSync(__dirname + "/../logs")) {
@@ -49,7 +50,11 @@ client.on("message", msg => {
 
   try {
     if (args.length > 0) {
-      move.execute(msg, args);
+      if (args[0] === "info") {
+        info.execute(msg);
+      } else {
+        move.execute(msg, args);
+      }
     }
   } catch (error) {
     winston.error(error);
