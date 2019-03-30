@@ -1,0 +1,19 @@
+{
+  "name": "d-mover",
+  "version": "0.1.0",
+  "description": "A bot to move Discord messages between channels",
+  "main": "src/app.js",
+  "repository": "https://github.com/MarkNjunge/dMover",
+  "author": "Mark Njung'e",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "dotenv": "^7.0.0",
+    "winston": "^3.2.1"
+  }
+}
