@@ -2,7 +2,7 @@ require("dotenv").config();
 const Discord = require("discord.js");
 const fs = require("fs");
 const winston = require("winston");
-const { prefix } = require("./config");
+const { prefix, token } = require("./config");
 const move = require("./commands/move");
 const info = require("./commands/info");
 
@@ -62,4 +62,4 @@ client.on("message", msg => {
   }
 });
 
-client.login("NTYxMjU4MzY2MzAzODYyODA0.D3_4kw.LyKFajd82R94G6xWvJwuUDWPkH8");
+client.login(token);
