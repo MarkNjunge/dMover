@@ -10,10 +10,10 @@ module.exports = {
 
     // Only follow owner's commands
     // TODO allow owner to add other users
-    if (message.author.id !== message.guild.ownerID) {
-      message.reply("Only the owner can move");
-      return;
-    }
+    // if (message.author.id !== message.guild.ownerID) {
+    //   message.reply("Only the owner can move");
+    //   return;
+    // }
 
     const wrongMessageId = args[0];
     const tagetChannelId = args[1].replace("<#", "").replace(">", "");
