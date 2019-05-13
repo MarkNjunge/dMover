@@ -34,7 +34,7 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
-  if (!msg.content.startsWith(prefix) || msg.author.bot) {
+  if (!msg.content.startsWith(`${prefix} `) || msg.author.bot) {
     return;
   }
 
