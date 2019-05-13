@@ -15,6 +15,14 @@ module.exports = {
     //   return;
     // }
 
+    // Reject messages with the wrong number of arguments
+    if (args.length < 2) {
+      message.reply(
+        "I need two arguments! Message ID and destination channel!"
+      );
+      return;
+    }
+
     const wrongMessageId = args[0];
     const tagetChannelId = args[1].replace("<#", "").replace(">", "");
 
