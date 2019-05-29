@@ -46,7 +46,7 @@ module.exports = {
         // Create response
         const data = [];
         data.push(`<@${wrongMessage.author.id}> said,`);
-        data.push(`\`\`\`\n${wrongMessage.content}\`\`\``);
+        data.push(wrongMessage.content);
         channel.send(data);
 
         // Delete command message and wrong message to clean channel
