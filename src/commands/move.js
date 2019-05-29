@@ -1,4 +1,5 @@
 const winston = require("winston");
+const { Attachment } = require("discord.js");
 
 module.exports = {
   execute(message, args) {
@@ -47,7 +48,16 @@ module.exports = {
         const data = [];
         data.push(`<@${wrongMessage.author.id}> said,`);
         data.push(wrongMessage.content);
-        channel.send(data);
+
+        // If the message has a file, send it with the new message
+        if (wrongMessage.attachments.first()) {
+          const attachment = new Attachment(
+            wrongMessage.attachments.first().url
+          );
+          channel.send(data, attachment);
+        } else {
+          channel.send(data);
+        }
 
         // Delete command message and wrong message to clean channel
         message.delete();
